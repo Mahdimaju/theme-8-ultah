@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The 40th Mythic Milestone of Chou Thai Long | Digital Birthday Invitation</title>
+    <meta name="description"
+        content="Merayakan lembaran baru penuh kilau, cinta, dan tawa bersama orang tersayang. Undangan Ulang Tahun ke-40 Chou Thai Long di Land of Dawn Lt.1." />
+
+    <!-- Google Fonts: Modern Sans-Serif, Royal Display & Romantic Calligraphy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@600;700;900&family=Great+Vibes&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Canvas Confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366F1',    // Indigo
+                        secondary: '#EC4899',  // Pink Rose
+                        bglight: '#F8FAFC',    // Pearl Slate
+                        surface: '#FFFFFF',    // Pure White
+                        darktext: '#1E293B',   // Slate 800
+                        accent: '#A855F7',     // Mythic Violet
+                        rosegold: {
+                            light: '#FDF2F0',
+                            DEFAULT: '#D89B8C',
+                            metallic: '#C98374',
+                            gold: '#E5B869'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        calligraphy: ['"Great Vibes"', 'cursive'],
+                        mythic: ['"Cinzel Decorative"', 'serif']
+                    },
+                    boxShadow: {
+                        'pastel': '0 20px 50px -12px rgba(99, 102, 241, 0.14), 0 8px 24px -6px rgba(236, 72, 153, 0.10)',
+                        'rosegold': '0 12px 35px -8px rgba(216, 155, 140, 0.35)',
+                        'glow': '0 0 25px rgba(168, 85, 247, 0.45)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --primary: #6366F1;
+            --secondary: #EC4899;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text: #1E293B;
+            --accent: #A855F7;
+            --rosegold: #D89B8C;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #6366F1, #EC4899);
+            border-radius: 9999px;
+        }
+
+        /* Land of Dawn Pastel Celestial Mesh Background */
+        .celestial-bg {
+            background-color: #F8FAFC;
+            background-image:
+                radial-gradient(at 12% 15%, rgba(99, 102, 241, 0.14) 0px, transparent 50%),
+                radial-gradient(at 88% 12%, rgba(236, 72, 153, 0.14) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(168, 85, 247, 0.09) 0px, transparent 60%),
+                radial-gradient(at 85% 85%, rgba(216, 155, 140, 0.18) 0px, transparent 50%),
+                radial-gradient(at 15% 88%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
+        }
+
+        /* Rose Gold & Mythic Gradient Text */
+        .text-gradient-mythic {
+            background: linear-gradient(135deg, #6366F1 0%, #A855F7 48%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-rosegold {
+            background: linear-gradient(135deg, #B76E79 0%, #D89B8C 45%, #C59B27 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Surface Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.86);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 45px -15px rgba(99, 102, 241, 0.12), 0 0 1px 1px rgba(236, 72, 153, 0.12);
+        }
+
+        .rosegold-border {
+            position: relative;
+        }
+
+        .rosegold-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1.5px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(236, 72, 153, 0.5), rgba(229, 184, 105, 0.65));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* 3D Opening Envelope Styling */
+        .envelope-perspective {
+            perspective: 1400px;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 410px;
+            height: 290px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .envelope-back {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(145deg, #EEF2FF, #FCE7F3);
+            border-radius: 20px;
+            box-shadow: 0 25px 60px -15px rgba(99, 102, 241, 0.3), 0 0 0 2px rgba(236, 72, 153, 0.25);
+            overflow: hidden;
+        }
+
+        .envelope-letter {
+            position: absolute;
+            left: 6%;
+            right: 6%;
+            bottom: 12px;
+            height: 90%;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);
+            border-radius: 16px;
+            padding: 18px 16px;
+            box-shadow: 0 10px 30px rgba(30, 41, 59, 0.12);
+            border: 1px solid rgba(216, 155, 140, 0.45);
+            z-index: 2;
+            transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s, opacity 0.6s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .envelope-front-left {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5F3FF 100%);
+            clip-path: polygon(0 0, 52% 55%, 0 100%);
+            z-index: 3;
+            border-radius: 20px;
+            filter: drop-shadow(2px 0 6px rgba(99, 102, 241, 0.1));
+        }
+
+        .envelope-front-right {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(225deg, #FFFFFF 0%, #FDF2F8 100%);
+            clip-path: polygon(100% 0, 48% 55%, 100% 100%);
+            z-index: 3;
+            border-radius: 20px;
+            filter: drop-shadow(-2px 0 6px rgba(236, 72, 153, 0.1));
+        }
+
+        .envelope-front-bottom {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, #FFFFFF 15%, #FAF5FF 100%);
+            clip-path: polygon(0 100%, 50% 46%, 100% 100%);
+            z-index: 4;
+            border-radius: 20px;
+            filter: drop-shadow(0 -5px 12px rgba(99, 102, 241, 0.12));
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 62%;
+            background: linear-gradient(165deg, #6366F1 0%, #A855F7 52%, #EC4899 100%);
+            clip-path: polygon(0 0, 50% 100%, 100% 0);
+            transform-origin: top center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.4s;
+            z-index: 5;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .envelope-seal {
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 6;
+            transition: transform 0.55s ease, opacity 0.45s ease;
+        }
+
+        /* Envelope Open State */
+        .envelope-open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .envelope-open .envelope-seal {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+
+        .envelope-open .envelope-letter {
+            transform: translateY(-135px) scale(1.03);
+            z-index: 6;
+        }
+
+        /* Land of Dawn Recall Circle Animation */
+        @keyframes spinSlow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinReverse {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spinSlow 24s linear infinite;
+        }
+
+        .animate-spin-reverse {
+            animation: spinReverse 18s linear infinite;
+        }
+
+        .vinyl-spin {
+            animation: spinSlow 5.5s linear infinite;
+        }
+
+        .vinyl-paused {
+            animation-play-state: paused;
+        }
+
+        /* Floating Balloons Animation */
+        @keyframes floatUpBalloon {
+            0% {
+                transform: translateY(110vh) translateX(0) rotate(-4deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.88;
+            }
+
+            50% {
+                transform: translateY(45vh) translateX(18px) rotate(5deg);
+            }
+
+            90% {
+                opacity: 0.88;
+            }
+
+            100% {
+                transform: translateY(-25vh) translateX(-14px) rotate(-6deg);
+                opacity: 0;
+            }
+        }
+
+        .balloon-item {
+            position: fixed;
+            bottom: -160px;
+            pointer-events: none;
+            z-index: 35;
+            animation: floatUpBalloon linear forwards;
+        }
+
+        /* Countdown Number Flip Pulse */
+        @keyframes numberPop {
+            0% {
+                transform: scale(0.86);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .num-animate {
+            animation: numberPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Equalizer Bars for Music Player */
+        @keyframes eqBar {
+
+            0%,
+            100% {
+                height: 4px;
+            }
+
+            50% {
+                height: 15px;
+            }
+        }
+
+        .eq-bar-1 {
+            animation: eqBar 0.7s ease-in-out infinite;
+        }
+
+        .eq-bar-2 {
+            animation: eqBar 0.5s ease-in-out infinite 0.15s;
+        }
+
+        .eq-bar-3 {
+            animation: eqBar 0.8s ease-in-out infinite 0.3s;
+        }
+
+        /* Reveal on Scroll */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="celestial-bg text-darktext antialiased selection:bg-secondary/20 selection:text-primary">
+
+    <!-- ===================================================================== -->
+    <!-- FLOATING BALLOONS CONTAINER (Triggered on Envelope Open & Celebrations) -->
+    <!-- ===================================================================== -->
+    <div id="balloonContainer" class="fixed inset-0 pointer-events-none z-30 overflow-hidden" aria-hidden="true"></div>
+
+    <!-- ===================================================================== -->
+    <!-- TOAST NOTIFICATION                                                    -->
+    <!-- ===================================================================== -->
+    <div id="toastNotification"
+        class="fixed top-5 left-1/2 -translate-x-1/2 z-[100] pointer-events-none opacity-0 -translate-y-4 transition-all duration-300">
+        <div class="glass-card rosegold-border px-5 py-3 rounded-full shadow-rosegold flex items-center gap-3">
+            <span id="toastIcon"
+                class="w-6 h-6 rounded-full bg-gradient-to-tr from-primary to-secondary text-white flex items-center justify-center text-xs font-bold">✓</span>
+            <span id="toastMessage" class="text-sm font-semibold text-darktext">Berhasil disalin!</span>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- 1. OPENING ENVELOPE COVER (MODAL OVERLAY)                             -->
+    <!-- ===================================================================== -->
+    <div id="envelopeOverlay"
+        class="fixed inset-0 z-50 flex flex-col items-center justify-between py-6 px-4 overflow-y-auto celestial-bg transition-all duration-1000">
+        <!-- Ambient Celestial Recall Rings -->
+        <div class="fixed inset-0 pointer-events-none flex items-center justify-center overflow-hidden opacity-35">
+            <svg class="w-[550px] h-[550px] sm:w-[720px] sm:h-[720px] animate-spin-slow text-primary/30"
+                viewBox="0 0 200 200" fill="none">
+                <circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="0.6" stroke-dasharray="6 4" />
+                <circle cx="100" cy="100" r="78" stroke="#EC4899" stroke-width="0.5" stroke-dasharray="3 6" />
+                <polygon points="100,12 188,100 100,188 12,100" stroke="#A855F7" stroke-width="0.4" fill="none" />
+                <polygon points="100,26 174,100 100,174 26,100" stroke="#D89B8C" stroke-width="0.4" fill="none"
+                    transform="rotate(45 100 100)" />
+            </svg>
+        </div>
+
+        <!-- Top Mythic Crest Header -->
+        <div class="relative z-10 text-center mt-2">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-secondary/30 shadow-sm mb-2">
+                <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+                <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-primary">Land of Dawn Sanctuary •
+                    Royal Invitation</span>
+            </div>
+            <h2 class="font-mythic text-xs sm:text-sm tracking-[0.3em] text-slate-500 uppercase">The 40th Mythic
+                Milestone</h2>
+        </div>
+
+        <!-- Center 3D Interactive Envelope -->
+        <div class="relative z-10 w-full max-w-md my-auto py-8">
+            <!-- Guest Greeting Card Above / Integrated with Envelope -->
+            <div class="text-center mb-8">
+                <p class="font-calligraphy text-3xl sm:text-4xl text-secondary mb-1">Special Celebration of</p>
+                <h1 class="font-mythic text-3xl sm:text-4xl font-bold text-gradient-mythic tracking-wide">Chou Thai Long
+                </h1>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 italic">"Way of the Dragon • 40 Tahun Penuh Berkah &
+                    Legenda"</p>
+            </div>
+
+            <!-- 3D Envelope Box -->
+            <div class="envelope-perspective px-2">
+                <div id="envelopeBox" class="envelope-wrapper">
+                    <div class="envelope-back"></div>
+
+                    <!-- Inner Sliding Invitation Letter -->
+                    <div class="envelope-letter">
+                        <span class="text-[10px] font-bold tracking-[0.22em] uppercase text-primary/80 mb-1">Undangan
+                            Eksklusif</span>
+                        <p class="text-xs text-slate-400 mb-1">Kepada Yth. Bapak/Ibu/Sahabat:</p>
+                        <div
+                            class="px-4 py-2 rounded-xl bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 border border-secondary/25 w-full max-w-[260px] mb-2">
+                            <p id="coverGuestName" class="text-base sm:text-lg font-extrabold text-darktext truncate">
+                                Sahabat Terbaik Kami</p>
+                        </div>
+                        <p class="text-[11px] text-slate-500 leading-relaxed max-w-[240px]">
+                            Jumat, 25 Desember 2026 • 18:30 WIB<br />
+                            <strong class="text-primary">Land of Dawn Lt.1</strong>
+                        </p>
+                    </div>
+
+                    <!-- Envelope Pocket Folds -->
+                    <div class="envelope-front-left"></div>
+                    <div class="envelope-front-right"></div>
+                    <div class="envelope-front-bottom flex flex-col items-center justify-end pb-4">
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-slate-400 font-semibold">Glamorous
+                            Pastel & Rose Gold</span>
+                    </div>
+
+                    <!-- Top Animated Flap -->
+                    <div class="envelope-flap"></div>
+
+                    <!-- Wax / Mythic Emblem Seal Button -->
+                    <button id="sealOpenBtn" onclick="openInvitation()" aria-label="Buka Undangan"
+                        class="envelope-seal group cursor-pointer focus:outline-none">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gradient-to-br from-amber-300 via-rosegold-metallic to-secondary p-0.5 shadow-glow transition-transform duration-300 group-hover:scale-110 flex items-center justify-center">
+                            <div
+                                class="w-full h-full rounded-full bg-gradient-to-br from-primary via-accent to-secondary flex flex-col items-center justify-center text-white border border-white/50">
+                                <!-- Dragon / Mythic Star Icon -->
+                                <svg class="w-6 h-6 text-amber-200 drop-shadow" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2L14.8 8.5L22 9.3L16.5 14L18.2 21L12 17.3L5.8 21L7.5 14L2 9.3L9.2 8.5L12 2Z" />
+                                </svg>
+                                <span class="text-[9px] font-extrabold tracking-widest uppercase">40th</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Personalized Recipient Pill Below Envelope & Action CTA -->
+            <div class="mt-8 text-center space-y-4">
+                <div class="glass-card rosegold-border rounded-2xl p-4 max-w-xs mx-auto shadow-pastel">
+                    <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400 font-semibold">Kepada Yth:</p>
+                    <p id="outerGuestName" class="text-lg font-extrabold text-gradient-mythic mt-0.5 break-words">
+                        Sahabat Terbaik Kami</p>
+                    <p class="text-[11px] text-slate-500 mt-1">Mohon maaf apabila terdapat kesalahan penulisan
+                        nama/gelar</p>
+                </div>
+
+                <button id="openInviteBtn" onclick="openInvitation()"
+                    class="relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary via-accent to-secondary text-white font-bold text-sm sm:text-base tracking-wide shadow-glow hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 group overflow-hidden">
+                    <span
+                        class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></span>
+                    <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" stroke-width="2.2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
+                    </svg>
+                    <span>Buka Undangan</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom Dresscode Hint -->
+        <div class="relative z-10 text-center text-xs text-slate-400">
+            <span>✨ Dress Code: Glamorous Pastel & Touch of Rose Gold ✨</span>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- 7. FLOATING MUSIC PLAYER (DYNAMIC CHEERFUL ACOUSTIC POP)              -->
+    <!-- ===================================================================== -->
+    <div class="fixed bottom-20 right-4 sm:bottom-8 sm:right-6 z-40 flex items-center gap-2">
+        <div id="musicInfoPill"
+            class="hidden sm:flex items-center gap-2.5 glass-card rosegold-border px-3.5 py-2 rounded-full shadow-pastel transition-all duration-300">
+            <div class="flex items-end gap-0.5 h-4" id="eqContainer">
+                <span class="w-1 bg-primary rounded-full eq-bar-1"></span>
+                <span class="w-1 bg-secondary rounded-full eq-bar-2"></span>
+                <span class="w-1 bg-accent rounded-full eq-bar-3"></span>
+            </div>
+            <div class="text-left pr-1">
+                <p class="text-[10px] font-bold uppercase tracking-wider text-primary leading-none">Dawn Acoustic Pop
+                </p>
+                <p id="musicStatusText" class="text-[10px] text-slate-500 leading-tight">Playing Cheerful Melody</p>
+            </div>
+        </div>
+
+        <button id="musicToggleBtn" onclick="toggleMusic()" title="Putar / Jeda Musik Latar"
+            aria-label="Putar atau Jeda Musik Latar"
+            class="relative w-14 h-14 rounded-full p-1 bg-gradient-to-tr from-primary via-accent to-secondary shadow-glow hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none">
+            <!-- Spinning Vinyl Disc -->
+            <div id="vinylDisc"
+                class="w-full h-full rounded-full bg-slate-900 border-2 border-rosegold-gold/70 flex items-center justify-center relative vinyl-spin vinyl-paused overflow-hidden">
+                <!-- Vinyl Grooves -->
+                <div class="absolute inset-1.5 rounded-full border border-white/15"></div>
+                <div class="absolute inset-3 rounded-full border border-white/10"></div>
+                <!-- Center Rose Gold Label -->
+                <div
+                    class="w-5 h-5 rounded-full bg-gradient-to-tr from-secondary to-amber-300 flex items-center justify-center shadow-inner">
+                    <div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+                </div>
+            </div>
+            <!-- Play/Pause Mini Badge -->
+            <span id="musicBadgeIcon"
+                class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white text-primary shadow-md border border-primary/20 flex items-center justify-center text-xs font-bold">
+                ▶
+            </span>
+        </button>
+    </div>
+
+    <!-- Quick Bottom Navigation Dock (Mobile First Luxury App Feel) -->
+    <nav aria-label="Navigasi Cepat"
+        class="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-md glass-card rosegold-border rounded-full px-3 py-2 shadow-pastel flex items-center justify-around text-xs font-semibold text-slate-600">
+        <a href="#hero"
+            class="flex flex-col items-center gap-0.5 px-2 py-1 rounded-full hover:text-primary transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span class="text-[10px]">Home</span>
+        </a>
+        <a href="#rundown"
+            class="flex flex-col items-center gap-0.5 px-2 py-1 rounded-full hover:text-primary transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-[10px]">Acara</span>
+        </a>
+        <a href="#gallery"
+            class="flex flex-col items-center gap-0.5 px-2 py-1 rounded-full hover:text-primary transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span class="text-[10px]">Galeri</span>
+        </a>
+        <a href="#location"
+            class="flex flex-col items-center gap-0.5 px-2 py-1 rounded-full hover:text-primary transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span class="text-[10px]">Lokasi</span>
+        </a>
+        <a href="#gift"
+            class="flex flex-col items-center gap-0.5 px-2 py-1 rounded-full hover:text-primary transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+            </svg>
+            <span class="text-[10px]">Kado</span>
+        </a>
+        <a href="#rsvp"
+            class="flex flex-col items-center gap-0.5 px-2 py-1 rounded-full hover:text-primary transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+            <span class="text-[10px]">Ucapan</span>
+        </a>
+    </nav>
+
+    <!-- ===================================================================== -->
+    <!-- MAIN INVITATION CONTENT CONTAINER                                     -->
+    <!-- ===================================================================== -->
+    <main id="mainContent" class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 space-y-16 sm:space-y-24">
+
+        <!-- =================================================================== -->
+        <!-- HERO SECTION & OPENING POETIC QUOTE                                 -->
+        <!-- =================================================================== -->
+        <section id="hero" class="relative pt-4 sm:pt-8 text-center reveal-section visible">
+            <!-- Top Decorative Mobile Legends Celestial Arch -->
+            <div class="glass-card rosegold-border rounded-[2.2rem] p-6 sm:p-12 shadow-pastel relative overflow-hidden">
+                <!-- Background Decorative Ornaments -->
+                <div
+                    class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-primary/10 blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-secondary/10 blur-3xl pointer-events-none">
+                </div>
+
+                <!-- Personalized Welcome Banner inside Main Card -->
+                <div
+                    class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 border border-primary/20 text-xs font-semibold text-primary mb-6">
+                    <span>✨ Selamat Datang di Sanctuary,</span>
+                    <span id="heroGuestBadge"
+                        class="font-extrabold text-secondary underline decoration-rosegold">Sahabat Terbaik Kami</span>
+                </div>
+
+                <!-- 40th Mythic Emblem Frame -->
+                <div class="relative w-44 h-44 sm:w-52 sm:h-52 mx-auto mb-6 flex items-center justify-center">
+                    <!-- Rotating Celestial Ring -->
+                    <svg class="absolute inset-0 w-full h-full animate-spin-slow" viewBox="0 0 200 200">
+                        <defs>
+                            <linearGradient id="mythicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6366F1" />
+                                <stop offset="50%" stop-color="#EC4899" />
+                                <stop offset="100%" stop-color="#E5B869" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="94" fill="none" stroke="url(#mythicGrad)" stroke-width="1.5"
+                            stroke-dasharray="8 5" />
+                        <polygon points="100,6 194,100 100,194 6,100" fill="none" stroke="url(#mythicGrad)"
+                            stroke-width="1" opacity="0.6" />
+                        <polygon points="100,6 194,100 100,194 6,100" fill="none" stroke="url(#mythicGrad)"
+                            stroke-width="1" opacity="0.6" transform="rotate(45 100 100)" />
+                    </svg>
+
+                    <!-- Portrait / Hero Avatar with Rose Gold Halo -->
+                    <div
+                        class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1.5 bg-gradient-to-tr from-primary via-secondary to-rosegold-gold shadow-rosegold">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85"
+                            alt="Potret Perayaan 40 Tahun Chou Thai Long"
+                            class="w-full h-full object-cover rounded-full border-4 border-white" />
+                        <!-- Level 40 Mythic Glory Badge -->
+                        <div
+                            class="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-primary via-accent to-secondary text-white font-mythic text-xs font-bold tracking-widest shadow-glow whitespace-nowrap border border-white">
+                            LVL 40 • MYTHIC
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Headline & Full Name -->
+                <p class="font-calligraphy text-3xl sm:text-4xl text-secondary mt-4">Celebrating the Golden Journey of
+                </p>
+                <h1 class="font-mythic text-3xl sm:text-5xl font-black text-gradient-mythic tracking-tight mt-1">
+                    Chou Thai Long
+                </h1>
+                <div
+                    class="mt-2 inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-rosegold-metallic">
+                    <span>★</span>
+                    <span>The Legend of "Chou" • 40th Milestone</span>
+                    <span>★</span>
+                </div>
+
+                <!-- Opening Quote (Mandatory Specification) -->
+                <blockquote
+                    class="mt-6 max-w-2xl mx-auto px-4 sm:px-8 py-5 rounded-2xl bg-gradient-to-br from-indigo-50/70 via-white to-pink-50/70 border border-secondary/20 shadow-sm">
+                    <p class="font-calligraphy text-2xl sm:text-3xl text-primary mb-2">
+                        "Merayakan lembaran baru penuh kilau, cinta, dan tawa bersama orang tersayang."
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
+                        Empat dekade bukanlah sekadar hitungan waktu di Land of Dawn kehidupan, melainkan ribuan langkah
+                        perjuangan, doa yang terjawab, dan hangatnya persahabatan yang tak pernah pudar. Terima kasih
+                        telah menjadi bagian dari kisah terindah ini.
+                    </p>
+                </blockquote>
+
+                <!-- Core Event Summary Pills -->
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-left">
+                    <div
+                        class="p-4 rounded-2xl bg-white/90 border border-indigo-100 shadow-sm flex items-center gap-3.5">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Tanggal Acara</p>
+                            <p class="text-sm font-bold text-darktext">Jumat, 25 Des 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-white/90 border border-pink-100 shadow-sm flex items-center gap-3.5">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Waktu Pelaksanaan
+                            </p>
+                            <p class="text-sm font-bold text-darktext">18:30 WIB - Selesai</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-4 rounded-2xl bg-white/90 border border-purple-100 shadow-sm flex items-center gap-3.5">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Tempat / Venue</p>
+                            <p class="text-sm font-bold text-darktext">Land of Dawn Lt.1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Celebration Button (Confetti + Floating Balloons) -->
+                <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+                    <button onclick="triggerCelebrationBurst()"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-secondary/15 to-primary/15 hover:from-secondary/25 hover:to-primary/25 border border-secondary/30 text-xs font-bold text-primary transition-all duration-300">
+                        <span>🎉</span>
+                        <span>Taburkan Konfeti & Balon Perayaan</span>
+                    </button>
+                    <a href="#rsvp"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-xs font-bold shadow-md hover:opacity-95 transition-all">
+                        <span>Konfirmasi Kehadiran (RSVP)</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- 2. REAL-TIME COUNTDOWN TIMER & DRESS CODE                           -->
+        <!-- =================================================================== -->
+        <section id="countdown" class="reveal-section">
+            <div
+                class="glass-card rosegold-border rounded-[2rem] p-6 sm:p-10 shadow-pastel text-center relative overflow-hidden">
+                <span class="text-xs font-bold uppercase tracking-[0.25em] text-primary">Menuju Malam Puncak
+                    Sanctuary</span>
+                <h2 class="font-mythic text-2xl sm:text-3xl font-bold text-darktext mt-1">Hitung Mundur Perayaan 40th
+                    Chou</h2>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Jumat, 25 Desember 2026 • Pukul 18:30 WIB</p>
+
+                <!-- 4 Countdown Boxes -->
+                <div class="grid grid-cols-4 gap-2.5 sm:gap-5 max-w-xl mx-auto mt-7">
+                    <div
+                        class="p-3 sm:p-5 rounded-2xl bg-gradient-to-b from-white to-indigo-50/80 border border-primary/20 shadow-sm">
+                        <div id="cdDays" class="font-mythic text-2xl sm:text-4xl font-black text-gradient-mythic">00
+                        </div>
+                        <div class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">Hari
+                        </div>
+                    </div>
+                    <div
+                        class="p-3 sm:p-5 rounded-2xl bg-gradient-to-b from-white to-pink-50/80 border border-secondary/20 shadow-sm">
+                        <div id="cdHours" class="font-mythic text-2xl sm:text-4xl font-black text-gradient-mythic">00
+                        </div>
+                        <div class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">Jam
+                        </div>
+                    </div>
+                    <div
+                        class="p-3 sm:p-5 rounded-2xl bg-gradient-to-b from-white to-purple-50/80 border border-accent/20 shadow-sm">
+                        <div id="cdMinutes" class="font-mythic text-2xl sm:text-4xl font-black text-gradient-mythic">00
+                        </div>
+                        <div class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">
+                            Menit</div>
+                    </div>
+                    <div
+                        class="p-3 sm:p-5 rounded-2xl bg-gradient-to-b from-white to-amber-50/80 border border-rosegold/30 shadow-sm">
+                        <div id="cdSeconds" class="font-mythic text-2xl sm:text-4xl font-black text-secondary">00</div>
+                        <div class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">
+                            Detik</div>
+                    </div>
+                </div>
+
+                <!-- Dress Code Showcase Card -->
+                <div
+                    class="mt-8 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-indigo-50/80 via-pink-50/80 to-amber-50/70 border border-rosegold/40 max-w-2xl mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="text-center sm:text-left">
+                            <span
+                                class="inline-block px-3 py-0.5 rounded-full bg-white text-[10px] font-extrabold uppercase tracking-widest text-secondary border border-secondary/20 mb-1.5">
+                                Royal Attire Guide
+                            </span>
+                            <h3 class="text-base sm:text-lg font-extrabold text-darktext">
+                                Dress Code: <span class="text-gradient-rosegold">Glamorous Pastel & Touch of Rose
+                                    Gold</span>
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-1">
+                                Kenakan busana terbaik Anda dalam balutan warna pastel lembut dengan sentuhan kilau Rose
+                                Gold yang anggun.
+                            </p>
+                        </div>
+                        <!-- Color Swatches -->
+                        <div class="flex items-center gap-2 shrink-0">
+                            <span title="Soft Indigo Pastel"
+                                class="w-8 h-8 rounded-full bg-[#A5B4FC] border-2 border-white shadow"></span>
+                            <span title="Blush Pink Pastel"
+                                class="w-8 h-8 rounded-full bg-[#F9A8D4] border-2 border-white shadow"></span>
+                            <span title="Lilac Lavender"
+                                class="w-8 h-8 rounded-full bg-[#D8B4FE] border-2 border-white shadow"></span>
+                            <span title="Touch of Rose Gold"
+                                class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#B76E79] via-[#E6BEAE] to-[#D4AF37] border-2 border-white shadow"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- POETIC STORY & HERO STATS (THE WAY OF CHOU - 40 YEARS OF GLORY)      -->
+        <!-- =================================================================== -->
+        <section class="reveal-section">
+            <div class="glass-card rosegold-border rounded-[2rem] p-6 sm:p-10 shadow-pastel">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5 relative">
+                        <div
+                            class="rounded-2xl overflow-hidden border-2 border-rosegold/40 shadow-rosegold relative group">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=85"
+                                alt="Chou 40th Milestone Sanctuary"
+                                class="w-full h-72 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
+                                <span class="text-[10px] uppercase tracking-[0.25em] text-amber-300 font-bold">Heroic
+                                    Attribute • Chou</span>
+                                <p class="font-mythic text-lg font-bold">40 Tahun Penuh Cinta & Ketangguhan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7 space-y-4 text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">
+                            <span>🐉</span>
+                            <span>The Way of Friendship & Gratitude</span>
+                        </div>
+                        <h2 class="font-mythic text-2xl sm:text-3xl font-bold text-darktext">
+                            Sebuah Perjalanan Menuju <span class="text-gradient-mythic">Mythic Glory Kehidupan</span>
+                        </h2>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Layaknya seorang kesatria di <strong>Land of Dawn</strong> yang tak pernah berhenti
+                            melangkah, usia ke-<strong>40 tahun</strong> bagi <strong>Chou Thai Long</strong> adalah
+                            momen suci untuk menoleh ke belakang dengan penuh rasa syukur, dan menatap masa depan dengan
+                            penuh harapan.
+                        </p>
+                        <p
+                            class="text-sm text-slate-600 leading-relaxed italic border-l-4 border-secondary pl-4 py-1 bg-pink-50/50 rounded-r-xl">
+                            "Kekuatan terbesar dalam hidup bukanlah seberapa cepat kita berlari sendiri, melainkan
+                            seberapa hangat genggaman tangan sahabat dan keluarga yang menemani di setiap musim
+                            perjuangan."
+                        </p>
+
+                        <!-- Heroic Life Buffs -->
+                        <div class="grid grid-cols-3 gap-3 pt-2">
+                            <div class="p-3 rounded-xl bg-indigo-50/70 border border-indigo-100 text-center">
+                                <p class="font-mythic text-lg sm:text-xl font-black text-primary">40</p>
+                                <p class="text-[11px] text-slate-500 font-semibold">Tahun Berkah</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-pink-50/70 border border-pink-100 text-center">
+                                <p class="font-mythic text-lg sm:text-xl font-black text-secondary">∞</p>
+                                <p class="text-[11px] text-slate-500 font-semibold">Doa & Cinta</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-purple-50/70 border border-purple-100 text-center">
+                                <p class="font-mythic text-lg sm:text-xl font-black text-accent">100%</p>
+                                <p class="text-[11px] text-slate-500 font-semibold">Kebahagiaan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- 4. SUSUNAN ACARA TIMELINE (RUNDOWN)                                 -->
+        <!-- =================================================================== -->
+        <section id="rundown" class="reveal-section">
+            <div class="glass-card rosegold-border rounded-[2rem] p-6 sm:p-10 shadow-pastel">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-secondary">Quest & Royal
+                        Timeline</span>
+                    <h2 class="font-mythic text-2xl sm:text-3xl font-bold text-darktext mt-1">Susunan Acara Malam
+                        Perayaan</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Setiap detik dirancang untuk merajut tawa, kehangatan, dan kenangan abadi di Land of Dawn Lt.1
+                    </p>
+                </div>
+
+                <!-- Vertical Timeline -->
+                <div
+                    class="relative max-w-2xl mx-auto before:absolute before:top-4 before:bottom-4 before:left-6 sm:before:left-1/2 before:-translate-x-1/2 before:w-0.5 before:bg-gradient-to-b before:from-primary before:via-secondary before:to-accent space-y-8">
+
+                    <!-- Item 1: 18.30 - 19.00 -->
+                    <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between group">
+                        <div class="sm:w-[45%] sm:text-right pl-14 sm:pl-0 pr-0 sm:pr-6">
+                            <span
+                                class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs mb-1">
+                                18.30 - 19.00 WIB
+                            </span>
+                            <h3 class="text-base font-extrabold text-darktext">Welcoming Guests & Red Carpet Photo
+                                Session</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Registrasi kehadiran di gerbang Land of Dawn Lt.1, sapaan hangat selamat datang, dan
+                                sesi foto glamor di Red Carpet.
+                            </p>
+                        </div>
+                        <div
+                            class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-accent text-white flex items-center justify-center shadow-glow border-4 border-white z-10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="sm:w-[45%] pl-14 sm:pl-6 mt-1 sm:mt-0">
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Quest Stage
+                                01 • Registrasi</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: 19.00 - 19.30 -->
+                    <div
+                        class="relative flex flex-col sm:flex-row-reverse items-start sm:items-center justify-between group">
+                        <div class="sm:w-[45%] sm:text-left pl-14 sm:pl-6">
+                            <span
+                                class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary font-bold text-xs mb-1">
+                                19.00 - 19.30 WIB
+                            </span>
+                            <h3 class="text-base font-extrabold text-darktext">Opening Ceremony & Special Video Memories
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Pembukaan acara secara megah dan pemutaran kilas balik perjalanan 4 dekade Chou Thai
+                                Long bersama keluarga & sahabat.
+                            </p>
+                        </div>
+                        <div
+                            class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-tr from-secondary to-accent text-white flex items-center justify-center shadow-glow border-4 border-white z-10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="sm:w-[45%] sm:text-right pl-14 sm:pl-0 sm:pr-6 mt-1 sm:mt-0">
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Quest Stage
+                                02 • Pembukaan</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: 19.30 - 20.00 -->
+                    <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between group">
+                        <div class="sm:w-[45%] sm:text-right pl-14 sm:pl-0 sm:pr-6">
+                            <span
+                                class="inline-block px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 font-bold text-xs mb-1">
+                                19.30 - 20.00 WIB
+                            </span>
+                            <h3 class="text-base font-extrabold text-darktext">Candle Blowing, Cake Cutting & Birthday
+                                Wish</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Momen sakral tiup lilin ke-40, pemotongan kue ulang tahun, untaian doa terbaik, dan
+                                toast kebahagiaan.
+                            </p>
+                        </div>
+                        <div
+                            class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-tr from-amber-400 to-secondary text-white flex items-center justify-center shadow-glow border-4 border-white z-10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                            </svg>
+                        </div>
+                        <div class="sm:w-[45%] pl-14 sm:pl-6 mt-1 sm:mt-0">
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Quest Stage
+                                03 • Puncak Harapan</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: 20.00 - 21.00 -->
+                    <div
+                        class="relative flex flex-col sm:flex-row-reverse items-start sm:items-center justify-between group">
+                        <div class="sm:w-[45%] sm:text-left pl-14 sm:pl-6">
+                            <span
+                                class="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent font-bold text-xs mb-1">
+                                20.00 - 21.00 WIB
+                            </span>
+                            <h3 class="text-base font-extrabold text-darktext">Dinner Banquet & Acoustic Live Band</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Santap malam istimewa ditemani alunan musik Dynamic Cheerful Acoustic Pop dan ramah
+                                tamah penuh keakraban.
+                            </p>
+                        </div>
+                        <div
+                            class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-tr from-accent to-primary text-white flex items-center justify-center shadow-glow border-4 border-white z-10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                            </svg>
+                        </div>
+                        <div class="sm:w-[45%] sm:text-right pl-14 sm:pl-0 sm:pr-6 mt-1 sm:mt-0">
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Quest Stage
+                                04 • Jamuan & Musik</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: 21.00 - 22.00 -->
+                    <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between group">
+                        <div class="sm:w-[45%] sm:text-right pl-14 sm:pl-0 sm:pr-6">
+                            <span
+                                class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs mb-1">
+                                21.00 - 22.00 WIB
+                            </span>
+                            <h3 class="text-base font-extrabold text-darktext">Fun Party Games, Doorprize & Photo
+                                Session</h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Games interaktif ala Land of Dawn, pembagian doorprize spesial, dan foto bersama seluruh
+                                tamu kehormatan.
+                            </p>
+                        </div>
+                        <div
+                            class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-secondary text-white flex items-center justify-center shadow-glow border-4 border-white z-10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="sm:w-[45%] pl-14 sm:pl-6 mt-1 sm:mt-0">
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Quest Stage
+                                05 • Victory Moment</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- 3. GALERI FOTO & KENANGAN (MASONRY GRID + LIGHTBOX MODAL)           -->
+        <!-- =================================================================== -->
+        <section id="gallery" class="reveal-section">
+            <div class="glass-card rosegold-border rounded-[2rem] p-6 sm:p-10 shadow-pastel">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-primary">Hall of Memories</span>
+                    <h2 class="font-mythic text-2xl sm:text-3xl font-bold text-darktext mt-1">Galeri Kenangan & Kilau
+                        Perjalanan</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Klik pada foto mana pun untuk melihat dalam tampilan layar penuh (Lightbox View)
+                    </p>
+                </div>
+
+                <!-- Masonry-Style Responsive Grid -->
+                <div id="galleryGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-5">
+                    <!-- Rendered dynamically via JS so Lightbox index & metadata stay 100% synced -->
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- 5. INTEGRASI LOKASI & GOOGLE CALENDAR                               -->
+        <!-- =================================================================== -->
+        <section id="location" class="reveal-section">
+            <div class="glass-card rosegold-border rounded-[2rem] p-6 sm:p-10 shadow-pastel">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-secondary">Sanctuary
+                        Coordinates</span>
+                    <h2 class="font-mythic text-2xl sm:text-3xl font-bold text-darktext mt-1">Lokasi Acara & Penunjuk
+                        Waktu</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Kehadiran Anda adalah kehormatan tertinggi di perayaan malam istimewa ini
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                    <!-- Venue Details & Calendar Actions -->
+                    <div
+                        class="lg:col-span-5 flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-br from-white via-indigo-50/40 to-pink-50/50 border border-primary/20 space-y-6">
+                        <div class="space-y-4">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold">
+                                <span>📍</span>
+                                <span>Main Sanctuary Venue</span>
+                            </div>
+                            <h3 class="font-mythic text-2xl font-bold text-darktext">Land of Dawn Lt.1</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Grand Celestial Ballroom — Land of Dawn Lt.1<br />
+                                Area Sanctuary Utama, Parkir VIP & Valet Tersedia.
+                            </p>
+
+                            <div
+                                class="pt-2 space-y-2.5 text-xs sm:text-sm text-slate-700 border-t border-slate-200/70">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="text-primary font-bold">🗓️ Hari/Tanggal:</span>
+                                    <span class="font-semibold">Jumat, 25 Desember 2026</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <span class="text-secondary font-bold">⏰ Waktu:</span>
+                                    <span class="font-semibold">18:30 WIB - Selesai</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <span class="text-accent font-bold">👗 Dress Code:</span>
+                                    <span class="font-semibold">Glamorous Pastel & Rose Gold</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons: Google Maps & Google Calendar -->
+                        <div class="space-y-3 pt-2">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Land+of+Dawn+Lt.1" target="_blank"
+                                rel="noopener noreferrer"
+                                class="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-gradient-to-r from-primary to-accent text-white text-xs sm:text-sm font-bold shadow-md hover:opacity-95 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Buka Petunjuk Arah (Google Maps)</span>
+                            </a>
+
+                            <a id="googleCalendarBtn" href="#" target="_blank" rel="noopener noreferrer"
+                                class="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-white hover:bg-pink-50 text-secondary border border-secondary/30 text-xs sm:text-sm font-bold shadow-sm transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                <span>Simpan ke Google Calendar</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Responsive Map Iframe -->
+                    <div
+                        class="lg:col-span-7 rounded-2xl overflow-hidden border-2 border-rosegold/40 shadow-sm min-h-[300px] sm:min-h-[360px] relative bg-slate-100">
+                        <iframe title="Peta Lokasi Land of Dawn Lt.1"
+                            src="https://maps.google.com/maps?q=Plaza%20Senayan%20Jakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            class="w-full h-full min-h-[300px] sm:min-h-[360px] border-0" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div
+                            class="absolute bottom-3 left-3 right-3 sm:right-auto glass-card px-3.5 py-2 rounded-xl border border-white text-xs font-semibold text-darktext shadow">
+                            📌 Pin Point: <strong>Land of Dawn Lt.1</strong> (Klik tombol petunjuk arah untuk navigasi
+                            GPS)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- 8. AMPLOP DIGITAL / HADIAH ULANG TAHUN (REKENING & QRIS)            -->
+        <!-- =================================================================== -->
+        <section id="gift" class="reveal-section">
+            <div class="glass-card rosegold-border rounded-[2rem] p-6 sm:p-10 shadow-pastel">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-primary">Token of Love &
+                        Appreciation</span>
+                    <h2 class="font-mythic text-2xl sm:text-3xl font-bold text-darktext mt-1">Amplop Digital & Tanda
+                        Kasih</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Doa restu dan kehadiran Anda telah menjadi hadiah terindah bagi Chou. Namun apabila Anda ingin
+                        mengirimkan tanda kasih secara digital, dapat melalui saluran berikut:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <!-- Bank 1: BCA -->
+                    <div
+                        class="p-6 rounded-2xl bg-gradient-to-br from-indigo-600 via-indigo-500 to-purple-600 text-white shadow-lg relative overflow-hidden flex flex-col justify-between">
+                        <div
+                            class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-white/10 blur-xl pointer-events-none">
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/20 text-xs font-extrabold tracking-wider uppercase">BANK
+                                    BCA</span>
+                                <svg class="w-8 h-8 text-amber-300/90" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="2" y="5" width="20" height="14" rx="3" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" />
+                                    <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="1.8" />
+                                </svg>
+                            </div>
+                            <p class="text-[11px] uppercase tracking-widest text-indigo-100">Nomor Rekening</p>
+                            <p id="rekBca" class="font-mythic text-xl sm:text-2xl font-bold tracking-wider mt-1">
+                                8735091244</p>
+                            <p class="text-xs text-indigo-100 mt-2">a.n <strong
+                                    class="text-white uppercase tracking-wide">chou</strong></p>
+                        </div>
+
+                        <button onclick="copyAccount('8735091244', 'Nomor Rekening BCA (8735091244)')"
+                            class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white text-primary font-bold text-xs flex items-center justify-center gap-2 hover:bg-indigo-50 active:scale-95 transition-all shadow">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            <span>Salin Nomor Rekening</span>
+                        </button>
+                    </div>
+
+                    <!-- Bank 2: Mandiri -->
+                    <div
+                        class="p-6 rounded-2xl bg-gradient-to-br from-pink-500 via-rose-500 to-amber-500 text-white shadow-lg relative overflow-hidden flex flex-col justify-between">
+                        <div
+                            class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-white/10 blur-xl pointer-events-none">
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-white/20 text-xs font-extrabold tracking-wider uppercase">BANK
+                                    MANDIRI</span>
+                                <svg class="w-8 h-8 text-amber-200" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="2" y="5" width="20" height="14" rx="3" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" />
+                                    <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="1.8" />
+                                </svg>
+                            </div>
+                            <p class="text-[11px] uppercase tracking-widest text-pink-100">Nomor Rekening</p>
+                            <p id="rekMandiri" class="font-mythic text-xl sm:text-2xl font-bold tracking-wider mt-1">
+                                1320098412891</p>
+                            <p class="text-xs text-pink-100 mt-2">a.n <strong
+                                    class="text-white uppercase tracking-wide">chou</strong></p>
+                        </div>
+
+                        <button onclick="copyAccount('1320098412891', 'Nomor Rekening Mandiri (1320098412891)')"
+                            class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white text-secondary font-bold text-xs flex items-center justify-center gap-2 hover:bg-pink-50 active:scale-95 transition-all shadow">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            <span>Salin Nomor Rekening</span>
+                        </button>
+                    </div>
+
+                    <!-- QRIS Barcode Card -->
+                    <div
+                        class="p-6 rounded-2xl bg-white border-2 border-rosegold/40 shadow-sm flex flex-col items-center justify-between text-center">
+                        <div class="w-full flex items-center justify-between mb-2">
+                            <span
+                                class="px-2.5 py-0.5 rounded-md bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-extrabold text-[11px]">QRIS
+                                ALL PAYMENT</span>
+                            <span class="text-[11px] font-bold text-slate-400">NMID: ID2026CHOU40</span>
+                        </div>
+
+                        <!-- High-Contrast Scannable-Style SVG QRIS Placeholder -->
+                        <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 my-2">
+                            <svg class="w-36 h-36 mx-auto text-slate-800" viewBox="0 0 120 120" fill="currentColor"
+                                role="img" aria-label="Barcode QRIS a.n Chou Thai Long">
+                                <!-- Finder Patterns -->
+                                <path d="M8,8 h32 v32 h-32 z M14,14 v20 h20 v-20 z M20,20 h8 v8 h-8 z" />
+                                <path d="M80,8 h32 v32 h-32 z M86,14 v20 h20 v-20 z M92,20 h8 v8 h-8 z" />
+                                <path d="M8,80 h32 v32 h-32 z M14,86 v20 h20 v-20 z M20,92 h8 v8 h-8 z" />
+                                <!-- Data Modules -->
+                                <rect x="46" y="8" width="6" height="6" />
+                                <rect x="58" y="8" width="6" height="12" />
+                                <rect x="68" y="14" width="6" height="6" />
+                                <rect x="46" y="22" width="12" height="6" />
+                                <rect x="64" y="26" width="6" height="12" />
+                                <rect x="8" y="46" width="12" height="6" />
+                                <rect x="26" y="46" width="6" height="12" />
+                                <rect x="38" y="52" width="12" height="6" />
+                                <rect x="56" y="44" width="10" height="10" fill="#6366F1" />
+                                <rect x="72" y="46" width="6" height="12" />
+                                <rect x="84" y="46" width="12" height="6" />
+                                <rect x="102" y="46" width="10" height="10" />
+                                <rect x="10" y="60" width="6" height="12" />
+                                <rect x="22" y="64" width="12" height="6" />
+                                <rect x="44" y="62" width="6" height="12" />
+                                <rect x="56" y="60" width="14" height="6" />
+                                <rect x="76" y="64" width="10" height="6" />
+                                <rect x="92" y="58" width="6" height="14" />
+                                <rect x="46" y="80" width="12" height="6" />
+                                <rect x="64" y="76" width="6" height="14" />
+                                <rect x="76" y="82" width="12" height="6" />
+                                <rect x="94" y="78" width="18" height="6" />
+                                <rect x="46" y="92" width="6" height="18" />
+                                <rect x="58" y="96" width="12" height="6" />
+                                <rect x="76" y="94" width="6" height="18" />
+                                <rect x="88" y="90" width="12" height="12" fill="#EC4899" />
+                                <rect x="104" y="96" width="8" height="16" />
+                                <rect x="60" y="106" width="10" height="6" />
+                            </svg>
+                        </div>
+
+                        <p class="text-xs font-bold text-darktext">a.n Chou Thai Long (Chou)</p>
+                        <button onclick="copyAccount('ID2026CHOU40', 'Kode Referensi QRIS (ID2026CHOU40)')"
+                            class="mt-3 w-full py-2 px-4 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 text-primary font-bold text-xs transition-all">
+                            Salin ID Merchant QRIS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- 6. RSVP KONFIRMASI KEHADIRAN & GUESTBOOK (LOCALSTORAGE)             -->
+        <!-- =================================================================== -->
+        <section id="rsvp" class="reveal-section">
+            <div class="glass-card rosegold-border rounded-[2rem] p-6 sm:p-10 shadow-pastel">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-secondary">Sanctuary Guestbook &
+                        RSVP</span>
+                    <h2 class="font-mythic text-2xl sm:text-3xl font-bold text-darktext mt-1">Konfirmasi Kehadiran &
+                        Untaian Doa</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Tuliskan doa terbaik Anda untuk langkah baru Chou di usia ke-40 dan konfirmasikan kehadiran Anda
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- RSVP Form -->
+                    <div class="lg:col-span-5">
+                        <form id="rsvpForm" onsubmit="handleRsvpSubmit(event)"
+                            class="p-6 rounded-2xl bg-white border border-indigo-100 shadow-sm space-y-4">
+                            <h3 class="text-base font-extrabold text-darktext flex items-center gap-2">
+                                <span>✍️</span>
+                                <span>Form Konfirmasi & Doa Restu</span>
+                            </h3>
+
+                            <div>
+                                <label for="guestNameInput" class="block text-xs font-bold text-slate-700 mb-1">Nama
+                                    Lengkap Tamu *</label>
+                                <input id="guestNameInput" type="text" required placeholder="Contoh: Alucard & Miya"
+                                    class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label for="guestCountInput"
+                                        class="block text-xs font-bold text-slate-700 mb-1">Jumlah Orang *</label>
+                                    <select id="guestCountInput"
+                                        class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-primary">
+                                        <option value="1 Orang">1 Orang</option>
+                                        <option value="2 Orang">2 Orang</option>
+                                        <option value="3 Orang">3 Orang</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="guestStatusInput"
+                                        class="block text-xs font-bold text-slate-700 mb-1">Konfirmasi *</label>
+                                    <select id="guestStatusInput"
+                                        class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-primary">
+                                        <option value="Hadir">✨ Hadir</option>
+                                        <option value="Berhalangan">🙏 Berhalangan</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="guestMessageInput" class="block text-xs font-bold text-slate-700 mb-1">Pesan
+                                    & Doa Restu Ulang Tahun *</label>
+                                <textarea id="guestMessageInput" rows="4" required
+                                    placeholder="Tuliskan ucapan selamat ulang tahun ke-40 dan doa terbaik untuk Chou..."
+                                    class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-primary via-accent to-secondary text-white font-bold text-sm shadow-glow hover:opacity-95 active:scale-[0.99] transition-all flex items-center justify-center gap-2">
+                                <span>Kirim Konfirmasi & Ucapan</span>
+                                <span>✨</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Live Guestbook List -->
+                    <div class="lg:col-span-7 flex flex-col">
+                        <!-- Attendance Summary Pills -->
+                        <div class="grid grid-cols-3 gap-3 mb-4">
+                            <div class="p-3 rounded-xl bg-indigo-50/80 border border-indigo-100 text-center">
+                                <p id="statTotalWishes" class="font-mythic text-lg font-black text-primary">0</p>
+                                <p class="text-[11px] font-semibold text-slate-500">Total Ucapan</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-emerald-50/80 border border-emerald-100 text-center">
+                                <p id="statAttending" class="font-mythic text-lg font-black text-emerald-600">0</p>
+                                <p class="text-[11px] font-semibold text-slate-500">Konfirmasi Hadir</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-pink-50/80 border border-pink-100 text-center">
+                                <p id="statUnable" class="font-mythic text-lg font-black text-secondary">0</p>
+                                <p class="text-[11px] font-semibold text-slate-500">Berhalangan</p>
+                            </div>
+                        </div>
+
+                        <!-- Scrollable Wishes Feed -->
+                        <div id="guestbookList" class="space-y-3 max-h-[420px] overflow-y-auto pr-1">
+                            <!-- Populated via JavaScript from localStorage -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- 10. URL GUEST LINK GENERATOR & POETIC CLOSING FOOTER                -->
+        <!-- =================================================================== -->
+        <footer class="reveal-section text-center space-y-8">
+            <!-- Helper Tool to Test / Share Personalized ?to=NamaTamu URL -->
+            <div class="glass-card rosegold-border rounded-2xl p-5 max-w-xl mx-auto">
+                <p class="text-xs font-bold uppercase tracking-wider text-primary mb-1">🔗 Personalisasi Link Tamu
+                    (?to=NamaTamu)</p>
+                <p class="text-xs text-slate-500 mb-3">
+                    Ketik nama tamu di bawah ini untuk menguji atau menyalin tautan undangan personal:
+                </p>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input id="customUrlGuestInput" type="text" placeholder="Ketik nama tamu (misal: Tigreal & Odette)"
+                        class="flex-1 px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs focus:outline-none focus:border-primary" />
+                    <button onclick="applyAndCopyGuestLink()"
+                        class="px-4 py-2 rounded-xl bg-gradient-to-r from-primary to-secondary text-white text-xs font-bold shadow hover:opacity-95 transition-all">
+                        Terapkan & Salin Link
+                    </button>
+                </div>
+            </div>
+
+            <!-- Poetic Closing Statement -->
+            <div class="space-y-3 max-w-lg mx-auto px-4">
+                <p class="font-calligraphy text-3xl sm:text-4xl text-secondary">Thank You & See You at the Sanctuary</p>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
+                    "Tiada kado yang lebih berharga selain senyum hangat, langkah kaki yang ringan menuju Land of Dawn
+                    Lt.1, dan doa tulus yang mengiringi usia baru ini."
+                </p>
+                <div class="pt-2">
+                    <p class="text-xs uppercase tracking-[0.25em] text-slate-400 font-bold">With Love & Gratitude,</p>
+                    <p class="font-mythic text-xl font-bold text-gradient-mythic mt-1">Chou Thai Long (Chou)</p>
+                    <p class="text-[11px] text-slate-400 mt-1">The 40th Milestone • Jumat, 25 Desember 2026</p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- LIGHTBOX MODAL FOR GALLERY PHOTOS                                     -->
+    <!-- ===================================================================== -->
+    <div id="lightboxModal"
+        class="fixed inset-0 z-[90] bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" aria-label="Tutup Foto"
+            class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center text-xl font-bold transition-all">
+            ✕
+        </button>
+
+        <button onclick="changeLightboxSlide(-1)" aria-label="Foto Sebelumnya"
+            class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center text-lg font-bold transition-all">
+            ‹
+        </button>
+
+        <div class="max-w-3xl w-full text-center space-y-3">
+            <div
+                class="rounded-2xl overflow-hidden border-2 border-rosegold/50 shadow-2xl bg-slate-900 max-h-[75vh] flex items-center justify-center">
+                <img id="lightboxImg" src="" alt="Preview Kenangan"
+                    class="max-h-[75vh] w-auto object-contain mx-auto" />
+            </div>
+            <div class="px-4">
+                <p id="lightboxTitle" class="font-mythic text-base sm:text-lg font-bold text-white"></p>
+                <p id="lightboxCaption" class="text-xs sm:text-sm text-slate-300 mt-0.5"></p>
+            </div>
+        </div>
+
+        <button onclick="changeLightboxSlide(1)" aria-label="Foto Selanjutnya"
+            class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center text-lg font-bold transition-all">
+            ›
+        </button>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT LOGIC (ALL INTERACTIVE FEATURES)                           -->
+    <!-- ===================================================================== -->
+    <script>
+        /*************************************************************************
+         * 1. PERSONALISASI NAMA TAMU VIA URL (?to=NamaTamu)
+         *************************************************************************/
+        function initGuestPersonalization() {
+            const params = new URLSearchParams(window.location.search);
+            const rawGuest = params.get('to') || params.get('guest') || params.get('nama');
+            const guestName = rawGuest && rawGuest.trim() !== ''
+                ? decodeURIComponent(rawGuest.replace(/\+/g, ' ')).trim()
+                : 'Sahabat Terbaik Kami';
+
+            document.getElementById('coverGuestName').textContent = guestName;
+            document.getElementById('outerGuestName').textContent = guestName;
+            document.getElementById('heroGuestBadge').textContent = guestName;
+
+            const rsvpNameInput = document.getElementById('guestNameInput');
+            if (rawGuest && rawGuest.trim() !== '' && rsvpNameInput) {
+                rsvpNameInput.value = guestName;
+            }
+        }
+
+        function applyAndCopyGuestLink() {
+            const input = document.getElementById('customUrlGuestInput');
+            const nameVal = (input.value || 'Sahabat Istimewa').trim();
+            const url = new URL(window.location.href);
+            url.searchParams.set('to', nameVal);
+
+            // Update current display immediately
+            document.getElementById('coverGuestName').textContent = nameVal;
+            document.getElementById('outerGuestName').textContent = nameVal;
+            document.getElementById('heroGuestBadge').textContent = nameVal;
+            document.getElementById('guestNameInput').value = nameVal;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url.toString()).catch(() => { });
+            }
+            showToast(`Link untuk "${nameVal}" berhasil diterapkan & disalin!`);
+        }
+
+        /*************************************************************************
+         * 2. OPENING ENVELOPE ANIMATION + CONFETTI + FLOATING BALLOONS
+         *************************************************************************/
+        let isEnvelopeOpened = false;
+
+        function openInvitation() {
+            if (isEnvelopeOpened) return;
+            isEnvelopeOpened = true;
+
+            const envelopeBox = document.getElementById('envelopeBox');
+            const overlay = document.getElementById('envelopeOverlay');
+            envelopeBox.classList.add('envelope-open');
+
+            // Start cheerful acoustic pop music
+            startAcousticMusic();
+
+            // Launch celebratory confetti & balloons
+            triggerCelebrationBurst();
+
+            // Smoothly transition away the cover overlay after envelope opens
+            setTimeout(() => {
+                overlay.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 900);
+            }, 1150);
+        }
+
+        /*************************************************************************
+         * 3. CONFETTI & FLOATING PASTEL BALLOONS
+         *************************************************************************/
+        function triggerCelebrationBurst() {
+            // Canvas-confetti burst
+            if (typeof confetti === 'function') {
+                const colors = ['#6366F1', '#EC4899', '#A855F7', '#E5B869', '#F9A8D4'];
+                confetti({
+                    particleCount: 90,
+                    spread: 80,
+                    origin: { y: 0.6 },
+                    colors: colors
+                });
+                setTimeout(() => {
+                    confetti({
+                        particleCount: 55,
+                        angle: 60,
+                        spread: 65,
+                        origin: { x: 0 },
+                        colors: colors
+                    });
+                    confetti({
+                        particleCount: 55,
+                        angle: 120,
+                        spread: 65,
+                        origin: { x: 1 },
+                        colors: colors
+                    });
+                }, 280);
+            }
+
+            // Spawn floating glamorous pastel & rose-gold balloons
+            spawnFloatingBalloons(10);
+        }
+
+        function spawnFloatingBalloons(count = 8) {
+            const container = document.getElementById('balloonContainer');
+            const palette = [
+                { main: '#6366F1', shine: '#A5B4FC' },
+                { main: '#EC4899', shine: '#F9A8D4' },
+                { main: '#A855F7', shine: '#D8B4FE' },
+                { main: '#D89B8C', shine: '#FCE7F3' },
+                { main: '#E5B869', shine: '#FEF3C7' }
+            ];
+
+            for (let i = 0; i < count; i++) {
+                const item = document.createElement('div');
+                item.className = 'balloon-item';
+                const color = palette[i % palette.length];
+                const leftPos = Math.floor(Math.random() * 88) + 4;
+                const duration = (Math.random() * 5 + 7.5).toFixed(2);
+                const delay = (Math.random() * 1.8).toFixed(2);
+                const scale = (Math.random() * 0.35 + 0.75).toFixed(2);
+
+                item.style.left = `${leftPos}%`;
+                item.style.animationDuration = `${duration}s`;
+                item.style.animationDelay = `${delay}s`;
+
+                item.innerHTML = `
+          <div style="transform: scale(${scale})">
+            <svg width="56" height="76" viewBox="0 0 56 76" fill="none">
+              <ellipse cx="28" cy="26" rx="22" ry="25" fill="${color.main}" fill-opacity="0.88"/>
+              <ellipse cx="20" cy="17" rx="6" ry="9" transform="rotate(-22 20 17)" fill="${color.shine}" fill-opacity="0.65"/>
+              <polygon points="25,50 31,50 33,55 23,55" fill="${color.main}"/>
+              <path d="M28 55 Q 32 63, 26 70 Q 24 73, 29 76" stroke="#94A3B8" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+        `;
+
+                container.appendChild(item);
+                setTimeout(() => {
+                    item.remove();
+                }, (parseFloat(duration) + parseFloat(delay) + 0.5) * 1000);
+            }
+        }
+
+        /*************************************************************************
+         * 4. REAL-TIME COUNTDOWN TIMER (Jumat, 25 Desember 2026 18:30 WIB)
+         *************************************************************************/
+        const targetEventDate = new Date('2026-12-25T18:30:00+07:00').getTime();
+        let prevCountdownValues = { d: '', h: '', m: '', s: '' };
+
+        function updateCountdown() {
+            const now = Date.now();
+            const diff = Math.max(0, targetEventDate - now);
+
+            const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+            const minutes = String(Math.floor((diff / 1000 / 60) % 60)).padStart(2, '0');
+            const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+
+            setCountdownDigit('cdDays', days, 'd');
+            setCountdownDigit('cdHours', hours, 'h');
+            setCountdownDigit('cdMinutes', minutes, 'm');
+            setCountdownDigit('cdSeconds', seconds, 's');
+        }
+
+        function setCountdownDigit(elementId, value, key) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            if (prevCountdownValues[key] !== value) {
+                prevCountdownValues[key] = value;
+                el.textContent = value;
+                el.classList.remove('num-animate');
+                void el.offsetWidth; // trigger reflow for animation
+                el.classList.add('num-animate');
+            }
+        }
+
+        /*************************************************************************
+         * 5. GALLERY DATA & LIGHTBOX MODAL
+         *************************************************************************/
+        const galleryPhotos = [
+            {
+                url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1000&q=85',
+                title: 'Chapter I • Kilau Harapan Baru',
+                caption: 'Merayakan setiap detik perjalanan menuju usia 40 tahun penuh warna dan sukacita.',
+                span: 'col-span-2 sm:col-span-2 row-span-2'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=85',
+                title: 'Chapter II • Harmoni Persahabatan',
+                caption: 'Bersama sahabat sejati di Land of Dawn kehidupan yang selalu memberi semangat.',
+                span: 'col-span-1'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=900&q=85',
+                title: 'Chapter III • Cahaya Lilin Doa',
+                caption: 'Empat dekade kebijaksanaan, ketangguhan, dan mimpi-mimpi yang terus menyala.',
+                span: 'col-span-1'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=85',
+                title: 'Chapter IV • Royal Banquet Toast',
+                caption: 'Mengangkat gelas rasa syukur untuk cinta keluarga dan kehangatan kebersamaan.',
+                span: 'col-span-1'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=85',
+                title: 'Chapter V • Malam Seribu Bintang',
+                caption: 'Tawa yang menggema di bawah langit malam perayaan yang tak terlupakan.',
+                span: 'col-span-1'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=85',
+                title: 'Chapter VI • The 40th Mythic Glory',
+                caption: 'Melangkah ke babak baru dengan hati yang bersyukur dan semangat yang abadi.',
+                span: 'col-span-2 sm:col-span-1'
+            }
+        ];
+
+        let activeLightboxIndex = 0;
+
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = galleryPhotos.map((item, idx) => `
+        <div
+          onclick="openLightbox(${idx})"
+          class="${item.span} group relative rounded-2xl overflow-hidden cursor-pointer border border-rosegold/30 shadow-sm bg-slate-100 min-h-[180px] sm:min-h-[220px]"
+        >
+          <img
+            src="${item.url}"
+            alt="${item.title}"
+            loading="lazy"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent opacity-85 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 text-left">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-amber-300">${item.title}</span>
+            <p class="text-xs text-white/95 line-clamp-2 mt-0.5">${item.caption}</p>
+          </div>
+          <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur text-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow">
+            🔍
+          </div>
+        </div>
+      `).join('');
+        }
+
+        function openLightbox(index) {
+            activeLightboxIndex = index;
+            updateLightboxView();
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function changeLightboxSlide(step) {
+            activeLightboxIndex = (activeLightboxIndex + step + galleryPhotos.length) % galleryPhotos.length;
+            updateLightboxView();
+        }
+
+        function updateLightboxView() {
+            const item = galleryPhotos[activeLightboxIndex];
+            document.getElementById('lightboxImg').src = item.url;
+            document.getElementById('lightboxTitle').textContent = item.title;
+            document.getElementById('lightboxCaption').textContent = item.caption;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('lightboxModal');
+            if (modal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeLightboxSlide(-1);
+            if (e.key === 'ArrowRight') changeLightboxSlide(1);
+        });
+
+        /*************************************************************************
+         * 6. GOOGLE CALENDAR AUTOMATIC LINK GENERATOR
+         *************************************************************************/
+        function initGoogleCalendarLink() {
+            const title = encodeURIComponent('Perayaan Ulang Tahun ke-40 Chou Thai Long (Chou)');
+            // Jumat, 25 Desember 2026, 18:30 WIB (11:30 UTC) s/d 22:00 WIB (15:00 UTC)
+            const dates = '20261225T113000Z/20261225T150000Z';
+            const details = encodeURIComponent(
+                'Merayakan lembaran baru penuh kilau, cinta, dan tawa bersama orang tersayang.\n\n' +
+                'Dress Code: Glamorous Pastel & Touch of Rose Gold\n' +
+                'Tempat: Land of Dawn Lt.1\n' +
+                'Waktu: 18:30 WIB - Selesai'
+            );
+            const location = encodeURIComponent('Land of Dawn Lt.1');
+            const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
+
+            const btn = document.getElementById('googleCalendarBtn');
+            if (btn) btn.href = calUrl;
+        }
+
+        /*************************************************************************
+         * 7. RSVP & GUESTBOOK WITH LOCALSTORAGE PERSISTENCE
+         *************************************************************************/
+        const STORAGE_KEY = 'chou_40th_birthday_guestbook_v1';
+
+        const defaultWishes = [
+            {
+                name: 'Tigreal & Natalia',
+                count: '2 Orang',
+                status: 'Hadir',
+                message: 'Selamat ulang tahun ke-40, Brother Chou! Semoga sehat selalu, makin bijaksana, dan terus bersinar layaknya legenda di Land of Dawn!',
+                time: 'Baru saja'
+            },
+            {
+                name: 'Kagura & Hayabusa',
+                count: '2 Orang',
+                status: 'Hadir',
+                message: 'Happy 40th Milestone Chou Thai Long! Terima kasih atas persahabatan yang luar biasa hangat selama ini. Siap hadir dengan outfit Glamorous Pastel & Rose Gold terbaik!',
+                time: '12 menit lalu'
+            },
+            {
+                name: 'Odette & Lancelot',
+                count: '2 Orang',
+                status: 'Hadir',
+                message: 'Semoga di usia kepala empat ini kebahagiaan, kemakmuran, dan cinta kasih senantiasa melingkupi langkahmu bersama keluarga tercinta.',
+                time: '1 jam lalu'
+            }
+        ];
+
+        function getWishes() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                }
+            } catch (e) { }
+            return defaultWishes;
+        }
+
+        function saveWishes(list) {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+            } catch (e) { }
+        }
+
+        function renderGuestbook() {
+            const wishes = getWishes();
+            const container = document.getElementById('guestbookList');
+
+            const attendingCount = wishes.filter(w => w.status === 'Hadir').length;
+            const unableCount = wishes.filter(w => w.status !== 'Hadir').length;
+
+            document.getElementById('statTotalWishes').textContent = wishes.length;
+            document.getElementById('statAttending').textContent = attendingCount;
+            document.getElementById('statUnable').textContent = unableCount;
+
+            container.innerHTML = wishes.map((item) => {
+                const isAttending = item.status === 'Hadir';
+                const badgeClass = isAttending
+                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                    : 'bg-pink-50 text-secondary border-pink-200';
+
+                return `
+          <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-primary/30 transition-all">
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-primary to-secondary text-white font-bold text-xs flex items-center justify-center shrink-0">
+                  ${escapeHtml(item.name.charAt(0).toUpperCase())}
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-darktext">${escapeHtml(item.name)}</h4>
+                  <p class="text-[11px] text-slate-400">${escapeHtml(item.count)} • ${escapeHtml(item.time)}</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${badgeClass}">
+                ${isAttending ? '✨ Hadir' : '🙏 Berhalangan'}
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed pl-11">
+              "${escapeHtml(item.message)}"
+            </p>
+          </div>
+        `;
+            }).join('');
+        }
+
+        function handleRsvpSubmit(event) {
+            event.preventDefault();
+            const nameEl = document.getElementById('guestNameInput');
+            const countEl = document.getElementById('guestCountInput');
+            const statusEl = document.getElementById('guestStatusInput');
+            const msgEl = document.getElementById('guestMessageInput');
+
+            const newEntry = {
+                name: nameEl.value.trim(),
+                count: countEl.value,
+                status: statusEl.value,
+                message: msgEl.value.trim(),
+                time: 'Baru saja'
+            };
+
+            const currentWishes = getWishes();
+            currentWishes.unshift(newEntry);
+            saveWishes(currentWishes);
+            renderGuestbook();
+
+            msgEl.value = '';
+            triggerCelebrationBurst();
+            showToast(`Terima kasih ${newEntry.name}! Konfirmasi & ucapan Anda telah tersimpan.`);
+        }
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        /*************************************************************************
+         * 8. ONE-CLICK COPY BANK ACCOUNT NUMBER
+         *************************************************************************/
+        function copyAccount(number, label) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(number).catch(() => { });
+            } else {
+                const temp = document.createElement('input');
+                temp.value = number;
+                document.body.appendChild(temp);
+                temp.select();
+                document.execCommand('copy');
+                temp.remove();
+            }
+            showToast(`${label} berhasil disalin!`);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const msgEl = document.getElementById('toastMessage');
+            msgEl.textContent = message;
+            toast.classList.remove('opacity-0', '-translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            clearTimeout(window.__toastTimer);
+            window.__toastTimer = setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', '-translate-y-4');
+            }, 3200);
+        }
+
+        /*************************************************************************
+         * 9. DYNAMIC CHEERFUL ACOUSTIC POP MUSIC SYNTHESIZER (WEB AUDIO API)
+         *    Guarantees crystal-clear cheerful acoustic guitar + chime melody
+         *    without broken third-party MP3 links!
+         *************************************************************************/
+        let audioCtx = null;
+        let isMusicPlaying = false;
+        let musicSchedulerTimer = null;
+        let stepCounter = 0;
+
+        // Cheerful Pop Chord Progression in C Major / A Minor / F Major / G Major
+        // Frequencies for acoustic pluck arpeggios & cheerful bell melody
+        const acousticPattern = [
+            { bass: 261.63, notes: [329.63, 392.00, 523.25, 659.25] }, // C Major
+            { bass: 220.00, notes: [329.63, 440.00, 523.25, 659.25] }, // A Minor 7
+            { bass: 174.61, notes: [261.63, 349.23, 440.00, 587.33] }, // F Major 9
+            { bass: 196.00, notes: [293.66, 392.00, 493.88, 587.33] }  // G Major
+        ];
+
+        function playAcousticPluck(freq, time, duration = 0.45, volume = 0.08, type = 'triangle') {
+            if (!audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, time);
+
+            gain.gain.setValueAtTime(0.001, time);
+            gain.gain.linearRampToValueAtTime(volume, time + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0008, time + duration);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(time);
+            osc.stop(time + duration);
+        }
+
+        function scheduleCheerfulStep() {
+            if (!isMusicPlaying || !audioCtx) return;
+
+            const now = audioCtx.currentTime;
+            const chordIndex = Math.floor(stepCounter / 8) % acousticPattern.length;
+            const subStep = stepCounter % 8;
+            const chord = acousticPattern[chordIndex];
+
+            // Warm bass note on beat 0 and 4
+            if (subStep === 0 || subStep === 4) {
+                playAcousticPluck(chord.bass, now, 0.75, 0.09, 'sine');
+            }
+
+            // Cheerful acoustic arpeggio pluck
+            const arpNote = chord.notes[subStep % chord.notes.length];
+            playAcousticPluck(arpNote, now, 0.38, 0.065, 'triangle');
+
+            // Sparkle melody accent on upbeat
+            if (subStep === 2 || subStep === 6) {
+                playAcousticPluck(arpNote * 1.5, now, 0.32, 0.035, 'sine');
+            }
+
+            stepCounter++;
+        }
+
+        function startAcousticMusic() {
+            try {
+                if (!audioCtx) {
+                    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                    audioCtx = new AudioContextClass();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                if (!isMusicPlaying) {
+                    isMusicPlaying = true;
+                    scheduleCheerfulStep();
+                    musicSchedulerTimer = setInterval(scheduleCheerfulStep, 240);
+                    updateMusicPlayerUI();
+                }
+            } catch (e) { }
+        }
+
+        function stopAcousticMusic() {
+            isMusicPlaying = false;
+            clearInterval(musicSchedulerTimer);
+            updateMusicPlayerUI();
+        }
+
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                stopAcousticMusic();
+            } else {
+                startAcousticMusic();
+            }
+        }
+
+        function updateMusicPlayerUI() {
+            const vinyl = document.getElementById('vinylDisc');
+            const badge = document.getElementById('musicBadgeIcon');
+            const statusText = document.getElementById('musicStatusText');
+            const eq = document.getElementById('eqContainer');
+
+            if (isMusicPlaying) {
+                vinyl.classList.remove('vinyl-paused');
+                badge.textContent = '❚❚';
+                if (statusText) statusText.textContent = 'Playing Cheerful Pop';
+                if (eq) eq.classList.remove('opacity-30');
+            } else {
+                vinyl.classList.add('vinyl-paused');
+                badge.textContent = '▶';
+                if (statusText) statusText.textContent = 'Music Paused';
+                if (eq) eq.classList.add('opacity-30');
+            }
+        }
+
+        /*************************************************************************
+         * 10. INTERSECTION OBSERVER FOR SMOOTH SCROLL REVEAL
+         *************************************************************************/
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal-section').forEach((section) => {
+                observer.observe(section);
+            });
+        }
+
+        /*************************************************************************
+         * INITIALIZE EVERYTHING ON DOM CONTENT LOADED
+         *************************************************************************/
+        window.addEventListener('DOMContentLoaded', () => {
+            initGuestPersonalization();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            renderGallery();
+            initGoogleCalendarLink();
+            renderGuestbook();
+            initScrollReveal();
+        });
+    </script>
+</body>
+
+</html>
